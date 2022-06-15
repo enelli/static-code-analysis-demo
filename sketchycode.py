@@ -1,2 +1,5 @@
+import bitlyshortener
+
+password = "admin123"
 eval("print('hello world')")
-print("Password: admin123")
+print("Password: ", password)
