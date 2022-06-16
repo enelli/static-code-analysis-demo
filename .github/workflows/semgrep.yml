@@ -110,6 +110,6 @@ jobs:
 
           print("Vulnerable packages: ", vulnerable_packages)
 
-          if len(vulnerable_packages > 0):
+          if len(vulnerable_packages) > 0:
             warning("Vulnerable packages detected.")
 
