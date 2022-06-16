@@ -25,4 +25,5 @@ jobs:
     - run: semgrep --config ./.github/semgrep/rule.yml --output ./.github/semgrep/scan_results.json --json
     - name: Detect vulnerable dependencies
     - uses: jannekem/run-python-script-action@v1.2
+    - run: python3 ./.github/semgrep/find_vulnerabilities.py
 
