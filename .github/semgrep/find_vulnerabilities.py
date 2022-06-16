@@ -76,5 +76,4 @@ try:
 except Exception as e:
     print(e)
 
-print(vulnerable_packages)
-
+print("Vulnerable packages: ", vulnerable_packages)

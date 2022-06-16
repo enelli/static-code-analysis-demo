@@ -5,4 +5,7 @@ rules:
   pattern-either:
     - pattern-regex: ([\w\-\_]+)\s*(==|[~><]=?)\s*['"]?(\d+[\.\d+]*)['"]?
     # - pattern-regex: ([\w\-\_]+) not in ["']?((\d+[\.\d+]*)(,\s+\d+[\.\d+]*)*)["']?
+  paths:
+      exclude:
+        - "*/scan_results.json"
   severity: INFO
