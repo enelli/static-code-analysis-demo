@@ -1,8 +1,8 @@
 rules:
-- id: is-comparison
-  languages:
-    - python
-  message: The operator 'is' is for reference equality, not value equality! Use
-  `==` instead!
-  pattern: $SOMEVAR is "..."
-  severity: ERROR
+- id: dependencies
+  languages: ['generic']
+  message: $1 $2 $3
+  pattern-either:
+    - pattern-regex: ([\w\-\_]+)\s*(==|[~><]=?)\s*['"]?(\d+[\.\d+]*)['"]?
+    # - pattern-regex: ([\w\-\_]+) not in ["']?((\d+[\.\d+]*)(,\s+\d+[\.\d+]*)*)["']?
+  severity: INFO
