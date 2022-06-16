@@ -29,6 +29,7 @@ jobs:
       # run: python3 ./.github/semgrep/find_vulnerabilities.py
       uses: jannekem/run-python-script-action@v1
       with:
+        fail-on-error: true
         script: |
           import json
           import os
@@ -110,4 +111,5 @@ jobs:
 
           if len(vulnerable_packages) > 0:
             warning("Vulnerable packages detected.")
+            raise Exception("Vulnerable packages detected:" + ",".join(vulnerable_packages))
 
