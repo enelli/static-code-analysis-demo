@@ -19,12 +19,12 @@ jobs:
     container:
       image: returntocorp/semgrep
     steps:
-    - name: Find PyPi dependencies
+    - name: Checkout repository
       uses: actions/checkout@v3
+    - name: Find PyPI dependencies
       run: |
         semgrep ci
         semgrep --config ./.github/semgrep/rule.yml --output ./.github/semgrep/scan_results.json --json
     - name: Detect vulnerable dependencies
-      uses: jannekem/run-python-script-action@v1.2
       run: python3 ./.github/semgrep/find_vulnerabilities.py
 
