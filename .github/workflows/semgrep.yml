@@ -62,12 +62,10 @@ jobs:
             with response as f:
                 return json.loads(f.read().decode())
 
-          path = os.path.dirname(os.path.abspath(__file__))
-
           try:
               vulnerable_packages = []
 
-              file = open(path + "/scan_results.json")
+              file = open("./.github/semgrep/scan_results.json")
               output = json.load(file)
 
               for package in output["results"]:
